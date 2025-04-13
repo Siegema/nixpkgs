@@ -16706,6 +16706,8 @@ self: super: with self; {
 
   sunweg = callPackage ../development/python-modules/sunweg { };
 
+  supabase = callPackage ../development/python-modules/supabase { };
+
   supabase-auth = callPackage ../development/python-modules/supabase-auth { };
 
   supabase-functions = self.supafunc;
