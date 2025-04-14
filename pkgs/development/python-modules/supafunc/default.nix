@@ -1,10 +1,11 @@
-{ lib
-, buildPythonPackage
-, fetchPypi
-, poetry-core
-, strenum
-, httpx
-, h2
+{
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  poetry-core,
+  strenum,
+  httpx,
+  h2,
 }:
 
 buildPythonPackage rec {
@@ -17,7 +18,11 @@ buildPythonPackage rec {
     sha256 = "sha256-aIJKmnvMz1qx4DjNpjK6R8uifyp9xgYBQga1b1oHHeI=";
   };
 
-  propagatedBuildInputs = [ strenum httpx h2 ];
+  propagatedBuildInputs = [
+    strenum
+    httpx
+    h2
+  ];
 
   nativeBuildInputs = [ poetry-core ];
 

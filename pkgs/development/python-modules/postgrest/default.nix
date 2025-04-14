@@ -1,16 +1,17 @@
-{lib
-, buildPythonPackage
-, fetchPypi
-, poetry-core
-, httpx
-, h2
-, deprecation
-, pydantic
-, strenum
+{
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  poetry-core,
+  httpx,
+  h2,
+  deprecation,
+  pydantic,
+  strenum,
 }:
 
 buildPythonPackage rec {
-  pname = "postgrest"; 
+  pname = "postgrest";
   version = "1.0.1";
   pyproject = true;
 

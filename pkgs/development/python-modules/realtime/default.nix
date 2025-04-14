@@ -1,11 +1,12 @@
-{ lib
-, buildPythonPackage
-, fetchPypi
-, poetry-core
-, python-dateutil
-, typing-extensions
-, websockets
-, aiohttp
+{
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  poetry-core,
+  python-dateutil,
+  typing-extensions,
+  websockets,
+  aiohttp,
 }:
 
 buildPythonPackage rec {
@@ -24,7 +25,7 @@ buildPythonPackage rec {
     websockets
     aiohttp
   ];
-  
+
   pythonImportsCheck = [ "realtime" ];
 
   postPatch = ''

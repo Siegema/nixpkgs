@@ -1,10 +1,11 @@
-{ lib
-, buildPythonPackage
-, fetchPypi
-, poetry-core
-, python-dateutil
-, httpx
-, h2
+{
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  poetry-core,
+  python-dateutil,
+  httpx,
+  h2,
 }:
 
 buildPythonPackage rec {
@@ -17,7 +18,11 @@ buildPythonPackage rec {
     sha256 = "sha256-iDY3EyqtNtnZK3xJeopW3/fFHxX68v96y8zvu9Xpc0c=";
   };
 
-  propagatedBuildInputs = [ python-dateutil httpx h2 ];
+  propagatedBuildInputs = [
+    python-dateutil
+    httpx
+    h2
+  ];
 
   nativeBuildInputs = [ poetry-core ];
 

@@ -1,13 +1,14 @@
-{ lib
-, buildPythonPackage
-, fetchPypi
-, poetry-core
-, gotrue
-, postgrest
-, realtime
-, storage3
-, supafunc
-, httpx
+{
+  lib,
+  buildPythonPackage,
+  fetchPypi,
+  poetry-core,
+  gotrue,
+  postgrest,
+  realtime,
+  storage3,
+  supafunc,
+  httpx,
 }:
 
 buildPythonPackage rec {
