@@ -15,26 +15,26 @@ buildPythonPackage rec {
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "sha256-iDY3EyqtNtnZK3xJeopW3/fFHxX68v96y8zvu9Xpc0c=";
+    hash = "sha256-iDY3EyqtNtnZK3xJeopW3/fFHxX68v96y8zvu9Xpc0c=";
   };
 
-  propagatedBuildInputs = [
+  dependencies = [
     python-dateutil
     httpx
     h2
   ];
 
-  nativeBuildInputs = [ poetry-core ];
+  build-system = [ poetry-core ];
 
   pythonImportCheck = [ "storage3" ];
 
   # tests aren't in pypi package
   doCheck = false;
 
-  meta = with lib; {
-    homepage = "https://github.com/supabase/storage-py.git";
-    license = licenses.mit;
+  meta = {
+    homepage = "https://github.com/supabase/storage-py";
+    license = lib.licenses.mit;
     description = "Supabase Storage client for Python.";
-    maintainers = with maintainers; [ siegema ];
+    maintainers = with lib.maintainers; [ siegema ];
   };
 }

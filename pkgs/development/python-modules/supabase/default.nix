@@ -18,12 +18,12 @@ buildPythonPackage rec {
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "sha256-LmYomtdK6cTLBKafneAM0s6IDNiQ3iMmmkCsW2kVHSY=";
+    hash = "sha256-LmYomtdK6cTLBKafneAM0s6IDNiQ3iMmmkCsW2kVHSY=";
   };
 
-  nativeBuildInputs = [ poetry-core ];
+  build-system = [ poetry-core ];
 
-  propagatedBuildInputs = [
+  dependencies = [
     postgrest
     realtime
     gotrue
@@ -37,10 +37,10 @@ buildPythonPackage rec {
   # test aren't in pypi package
   doCheck = false;
 
-  meta = with lib; {
+  meta = {
     homepage = "https://github.com/supabase-community/supabase-py";
-    license = licenses.mit;
+    license = lib.licenses.mit;
     description = "Supabas client for Python";
-    maintainers = with maintainers; [ siegema ];
+    maintainers = with lib.maintainers; [ siegema ];
   };
 }

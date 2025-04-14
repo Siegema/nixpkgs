@@ -16,10 +16,10 @@ buildPythonPackage rec {
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "sha256-jndhbYxyHw8X6golb2tc1tYmsOtmswVUTV8zDDptmkw=";
+    hash = "sha256-jndhbYxyHw8X6golb2tc1tYmsOtmswVUTV8zDDptmkw=";
   };
 
-  propagatedBuildInputs = [
+  dependencies = [
     python-dateutil
     typing-extensions
     websockets
@@ -39,7 +39,7 @@ buildPythonPackage rec {
   doCheck = false;
 
   meta = with lib; {
-    homepage = "https://github.com/supabase/realtime-py.git";
+    homepage = "https://github.com/supabase/realtime-py";
     license = licenses.mit;
     description = "Python Realtime Client for Supabase";
     maintainers = with maintainers; [ siegema ];
